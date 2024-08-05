@@ -1,4 +1,4 @@
-# Countdown Vanilla
+# Lista de Tarefas
 *Atividade criada por Tiago Quadros*
 
 ## Objetivo
@@ -7,8 +7,7 @@ Aqui iremos criar um contador que poderá servir como uma ferramenta de pomodoro
 ![Exemplo](exemplo.png)
 
 ## Habilidades Esperadas
-- Assimilar os conceitos básicos de JS e TS
-- Manipular timers
+- Gerenciar estados e props em componentes
 - Gerenciar eventos
 
 ## Como entregar a atividade?

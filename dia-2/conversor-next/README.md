@@ -1,15 +1,13 @@
-# API de Cachorros
+# Conversor de Moedas
 *Atividade criada por Tiago Quadros*
 
 ## Objetivo
-Aqui iremos criar um contador que poderá servir como uma ferramenta de pomodoro ou similar.
-
-![Exemplo](exemplo.png)
+Desenvolver uma aplicação web utilizando Next.js que mostre a taxa de câmbio usando a API do AwesomeAPI.
 
 ## Habilidades Esperadas
-- Assimilar os conceitos básicos de JS e TS
-- Manipular timers
-- Gerenciar eventos
+- Assimilar os conceitos do Next.js
+- Entender a diferença das rotas em relação ao React.
+- Entender o uso de SSR.
 
 ## Como entregar a atividade?
 As atividade devem ser enviadas em um arquivo zip, apenas com os seus códigos (as dependências podem ser reinstaladas apenas com o `package.json`).
@@ -18,18 +16,23 @@ As atividade devem ser enviadas em um arquivo zip, apenas com os seus códigos (
 
 ## Requisitos
 
-### 1 - Criar a estrutura inicial.
-Você irá precisar criar uma estrutura que contenha um arquivo index.html e um arquivo script.js que deve ser vinculado ao arquivo HTML.
+### 1 - Crie a estrutura inicial
+Instale o Next.js e crie um novo projeto.
 
-### 2 - Crie os elementos básicos do HTML.
-De forma básica, o contador deve conter 3 inputs para registrar as horas, minutos e segundos do contador. Além de um botão para iniciar o contador.
+### 2 - Crie a função de fetch de dados das cotações
+A requisição para a nossa API `https://economia.awesomeapi.com.br` deve ser realizada em um arquivo `api.ts` dentro de uma pasta chamada `lib`.
 
-### 3 - Crie uma função para armazenar o tempo salvo.
-O tempo deve ser considerado em horas, minutos e segundos. O tempo pode ser armazenado ao mesmo tempo em que o contador é iniciado.
+### 3 - Crie uma função para obter as moedas disponíveis
+A requisição para a nossa API `https://economia.awesomeapi.com.br` deve ser realizada em um arquivo `api.ts` dentro de uma pasta chamada `lib`.
 
-### 4 - Ao clicar no botão de iniciar faça com que um contador seja iniciado.
+### 4 - Crie a página de exibição
+Edite pages/index.js para buscar e exibir as taxas de câmbio
+
+### 5 - Crie a função para atualizar os valores conforme as moedas selecionadas.
 Aqui você deve garantir que nenhum outro contador tenha sido iniciado para evitar a duplicidade na contagem do tempo (2 segundos a cada segundo).
 
-### 5 - Ao terminar o contador, execute algum aviso visual e/ou sonoro para o usuário.
-Aqui você pode criar um aviso que seja, trocar a cor do fundo, disparar um alerta ou tocar algum efeito sonoro.
-O contador não deve prosseguir após atingir zero.
+### 6 - [BÔNUS] Crie uma página sobre o projeto
+Aqui desejamos apenas testar nosso conhecimento sobre o Router do Next.js.
+
+### 7 - [BÔNUS] Crie uma página 404 para rotas inválidas.
+Mesmo objetivo do requisito 6.

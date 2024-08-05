@@ -1,14 +1,12 @@
-# API de Cachorros
+# Lista de Usuários (Refatoração)
 *Atividade criada por Tiago Quadros*
 
 ## Objetivo
-Aqui iremos criar um contador que poderá servir como uma ferramenta de pomodoro ou similar.
-
-![Um exemplo do nosso contador](countdown.png)
+Iremos refatorar a lista estática de usuários para incluir renderização dinâmica utilizando map, e adicionar um evento para selecionar um card de usuário e destacá-lo.
 
 ## Habilidades Esperadas
-- Assimilar os conceitos básicos de JS e TS
-- Manipular timers
+- Renderizar listas dinamicamente
+- Manipular estados
 - Gerenciar eventos
 
 ## Como entregar a atividade?
@@ -18,18 +16,18 @@ As atividade devem ser enviadas em um arquivo zip, apenas com os seus códigos (
 
 ## Requisitos
 
-### 1 - Criar a estrutura inicial.
-Você irá precisar criar uma estrutura que contenha um arquivo index.html e um arquivo script.js que deve ser vinculado ao arquivo HTML.
+### 1 - Refatorar o componente principal (App)
+Utilize o método map para renderizar a lista de usuários de forma dinâmica.
 
-### 2 - Crie os elementos básicos do HTML.
-De forma básica, o contador deve conter 3 inputs para registrar as horas, minutos e segundos do contador. Além de um botão para iniciar o contador.
+### 2 - Adicionar estado para armazenar a lista de cards
+Adicione um estado no componente App para armazenar o array de usuários.
 
-### 3 - Crie uma função para armazenar o tempo salvo.
-O tempo deve ser considerado em horas, minutos e segundos. O tempo pode ser armazenado ao mesmo tempo em que o contador é iniciado.
+### 3 - Adicionar estado para seleção de card
+Adicione um estado no componente App para armazenar o índice ou identificador do card de usuário selecionado.
 
-### 4 - Ao clicar no botão de iniciar faça com que um contador seja iniciado.
-Aqui você deve garantir que nenhum outro contador tenha sido iniciado para evitar a duplicidade na contagem do tempo (2 segundos a cada segundo).
+### 4 - Adicionar evento de seleção
+Adicione um evento de clique no componente UserCard que altere o estado de seleção no componente App.
+Destaque o card selecionado visualmente, alterando seu estilo.
 
-### 5 - Ao terminar o contador, execute algum aviso visual e/ou sonoro para o usuário.
-Aqui você pode criar um aviso que seja, trocar a cor do fundo, disparar um alerta ou tocar algum efeito sonoro.
-O contador não deve prosseguir após atingir zero.
+### 5 - [BÔNUS] Adicione uma opção para deletar usuários
+Crie uma opção para remover qualquer usuário da lista e ela ser atualizada imediatamente na tela.

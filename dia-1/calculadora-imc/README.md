@@ -1,4 +1,4 @@
-# API de Cachorros
+# Calculadora de IMC
 *Atividade criada por Tiago Quadros*
 
 ## Objetivo
@@ -7,8 +7,9 @@ Aqui iremos criar um contador que poderá servir como uma ferramenta de pomodoro
 ![Exemplo](exemplo.png)
 
 ## Habilidades Esperadas
-- Assimilar os conceitos básicos de JS e TS
-- Manipular timers
+- Criar uma aplicação React com Vite
+- Manipular estados
+- Criar componentes
 - Gerenciar eventos
 
 ## Como entregar a atividade?
@@ -18,18 +19,29 @@ As atividade devem ser enviadas em um arquivo zip, apenas com os seus códigos (
 
 ## Requisitos
 
-### 1 - Criar a estrutura inicial.
-Você irá precisar criar uma estrutura que contenha um arquivo index.html e um arquivo script.js que deve ser vinculado ao arquivo HTML.
+### Criar a Estrutura Inicial
+Crie um novo projeto React utilizando o Vite.
+Configure o projeto conforme necessário, incluindo a instalação de quaisquer dependências adicionais.
 
-### 2 - Crie os elementos básicos do HTML.
-De forma básica, o contador deve conter 3 inputs para registrar as horas, minutos e segundos do contador. Além de um botão para iniciar o contador.
+### 2 - Criar os Componentes Básicos
+Crie um componente para a entrada de dados, que inclua dois inputs: um para a altura (em metros) e outro para o peso (em quilogramas).
+Crie um botão para iniciar o cálculo do IMC (você pode componentizar de uma forma mais detalhada caso deseje).
 
-### 3 - Crie uma função para armazenar o tempo salvo.
-O tempo deve ser considerado em horas, minutos e segundos. O tempo pode ser armazenado ao mesmo tempo em que o contador é iniciado.
+### 3 - Gerenciar Estados e Eventos
+Garanta que os inputs estejam vinculados aos estados apropriados.
+Garanta que o clique no botão de cálculo dispare a função de cálculo e atualize o estado do resultado do IMC.
 
-### 4 - Ao clicar no botão de iniciar faça com que um contador seja iniciado.
-Aqui você deve garantir que nenhum outro contador tenha sido iniciado para evitar a duplicidade na contagem do tempo (2 segundos a cada segundo).
+### 4 - Criar a Lógica para o Cálculo do IMC
+Crie uma função que calcule o IMC com base na fórmula: IMC = peso / (altura * altura).
+Armazene o resultado do cálculo em um estado do componente.
 
-### 5 - Ao terminar o contador, execute algum aviso visual e/ou sonoro para o usuário.
+### 5 - Exibir o Resultado
+Crie um componente para exibir o resultado do IMC calculado.
+Mostre uma mensagem ao usuário com o valor do IMC e uma interpretação básica (ex: abaixo do peso, peso normal, sobrepeso, etc.).
+
+### 6 - Ao terminar o contador, execute algum aviso visual e/ou sonoro para o usuário.
 Aqui você pode criar um aviso que seja, trocar a cor do fundo, disparar um alerta ou tocar algum efeito sonoro.
 O contador não deve prosseguir após atingir zero.
+
+### 7 - [BÔNUS] Faça a estilização condicional para alterar a cor conforme o nível de IMC.
+Use cores como vermelho para obesidade, laranja para sobrepeso, verde para regular e azul para abaixo do regular.
