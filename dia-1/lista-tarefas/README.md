@@ -1,4 +1,4 @@
-# Lista de Tarefas
+# Lista de Tarefas - Na verdade contador
 *Atividade criada por Tiago Quadros*
 
 ## Objetivo
@@ -18,7 +18,7 @@ As atividade devem ser enviadas em um arquivo zip, apenas com os seus códigos (
 ## Requisitos
 
 ### 1 - Criar a estrutura inicial.
-Você irá precisar criar uma estrutura que contenha um arquivo index.html e um arquivo script.js que deve ser vinculado ao arquivo HTML.
+Execute as etapas com o `npm create vite@latest`
 
 ### 2 - Crie os elementos básicos do HTML.
 De forma básica, o contador deve conter 3 inputs para registrar as horas, minutos e segundos do contador. Além de um botão para iniciar o contador.
