@@ -1,4 +1,21 @@
-function Button() {
+import { useEffect } from "react";
+
+type IProps = {
+  isDisabled: boolean;
+};
+
+function Button({ isDisabled }: IProps) {
+  // useEffect(() => {
+  //   //Monta
+  //   const timer = setInterval(() => console.log('Contador'), 1000);
+
+  //   //Desmontagem
+  //   return () => {
+  //     clearInterval(timer);
+  //     alert('Button Componente desmontado');
+  //   }
+  // });
+
   return (
     <button
       type="submit"
@@ -11,6 +28,7 @@ function Button() {
         borderRadius: 4,
         width: '100%',
       }}
+      disabled={!isDisabled}
     >
       Calcular
     </button>
