@@ -1,47 +1,30 @@
-# Calculadora de IMC
-*Atividade criada por Tiago Quadros*
+# React + TypeScript + Vite
 
-## Objetivo
-Aqui iremos criar um contador que poderá servir como uma ferramenta de pomodoro ou similar.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-![Exemplo](exemplo.png)
+Currently, two official plugins are available:
 
-## Habilidades Esperadas
-- Criar uma aplicação React com Vite
-- Manipular estados
-- Criar componentes
-- Gerenciar eventos
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Como entregar a atividade?
-As atividade devem ser enviadas em um arquivo zip, apenas com os seus códigos (as dependências podem ser reinstaladas apenas com o `package.json`).
+## Expanding the ESLint configuration
 
-[FORMULÁRIO PARA ENVIO](https://forms.gle/iJKx4yrXPouE5KpU8)
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Requisitos
+- Configure the top-level `parserOptions` property like this:
 
-### Criar a Estrutura Inicial
-Crie um novo projeto React utilizando o Vite.
-Configure o projeto conforme necessário, incluindo a instalação de quaisquer dependências adicionais.
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-### 2 - Criar os Componentes Básicos
-Crie um componente para a entrada de dados, que inclua dois inputs: um para a altura (em metros) e outro para o peso (em quilogramas).
-Crie um botão para iniciar o cálculo do IMC (você pode componentizar de uma forma mais detalhada caso deseje).
-
-### 3 - Gerenciar Estados e Eventos
-Garanta que os inputs estejam vinculados aos estados apropriados.
-Garanta que o clique no botão de cálculo dispare a função de cálculo e atualize o estado do resultado do IMC.
-
-### 4 - Criar a Lógica para o Cálculo do IMC
-Crie uma função que calcule o IMC com base na fórmula: IMC = peso / (altura * altura).
-Armazene o resultado do cálculo em um estado do componente.
-
-### 5 - Exibir o Resultado
-Crie um componente para exibir o resultado do IMC calculado.
-Mostre uma mensagem ao usuário com o valor do IMC e uma interpretação básica (ex: abaixo do peso, peso normal, sobrepeso, etc.).
-
-### 6 - Ao terminar o contador, execute algum aviso visual e/ou sonoro para o usuário.
-Aqui você pode criar um aviso que seja, trocar a cor do fundo, disparar um alerta ou tocar algum efeito sonoro.
-O contador não deve prosseguir após atingir zero.
-
-### 7 - [BÔNUS] Faça a estilização condicional para alterar a cor conforme o nível de IMC.
-Use cores como vermelho para obesidade, laranja para sobrepeso, verde para regular e azul para abaixo do regular.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
