@@ -1,33 +1,30 @@
-# Lista de Usuários (Refatoração)
-*Atividade criada por Tiago Quadros*
+# React + TypeScript + Vite
 
-## Objetivo
-Iremos refatorar a lista estática de usuários para incluir renderização dinâmica utilizando map, e adicionar um evento para selecionar um card de usuário e destacá-lo.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Habilidades Esperadas
-- Renderizar listas dinamicamente
-- Manipular estados
-- Gerenciar eventos
+Currently, two official plugins are available:
 
-## Como entregar a atividade?
-As atividade devem ser enviadas em um arquivo zip, apenas com os seus códigos (as dependências podem ser reinstaladas apenas com o `package.json`).
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-[FORMULÁRIO PARA ENVIO](https://forms.gle/iJKx4yrXPouE5KpU8)
+## Expanding the ESLint configuration
 
-## Requisitos
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-### 1 - Refatorar o componente principal (App)
-Utilize o método map para renderizar a lista de usuários de forma dinâmica.
+- Configure the top-level `parserOptions` property like this:
 
-### 2 - Adicionar estado para armazenar a lista de cards
-Adicione um estado no componente App para armazenar o array de usuários.
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-### 3 - Adicionar estado para seleção de card
-Adicione um estado no componente App para armazenar o índice ou identificador do card de usuário selecionado.
-
-### 4 - Adicionar evento de seleção
-Adicione um evento de clique no componente UserCard que altere o estado de seleção no componente App.
-Destaque o card selecionado visualmente, alterando seu estilo.
-
-### 5 - [BÔNUS] Adicione uma opção para deletar usuários
-Crie uma opção para remover qualquer usuário da lista e ela ser atualizada imediatamente na tela.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
