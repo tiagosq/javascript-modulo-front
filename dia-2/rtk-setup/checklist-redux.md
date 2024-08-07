@@ -33,6 +33,55 @@ Note que o Redux não precisa ser utilizado apenas com o React, mas este checkli
 
   export default store;
   ```
+
+- [ ] Crie seu `reducer`, sendo que o nome do arquivo é ideal que seja feito `nomeSlice.ts`. Você pode criar vários `reducers` desde que coloque os mesmos dentro da `store` criada anteriormente.
+```ts
+  import { createSlice } from "@reduxjs/toolkit";
+
+  type ITheme = {
+    colorScheme: 'dark' | 'light';
+    counter: number;
+  }
+
+  const initialState: ITheme = {
+    colorScheme: 'dark',
+    counter: 0,
+  };
+
+  const themeSlice = createSlice({
+    name: 'theme',
+    initialState, // Short-hand, por causa o nome do objeto é o mesmo da chave
+    reducers: {
+      // Todas as funções de alteração de dados no slice.
+      /*
+        state representa o valor atual no Redux.
+        action representa o valor que está sendo passado para o Redux.
+
+        Exemplo:
+        action = {
+          type: 'toggleTheme',
+          payload: {
+            theme: 'light',
+          },
+        }
+      */
+      // Action - Função
+      // Estes parâmetros são criados pelo Redux, nós só podemos manipular a action.
+      toggleTheme: (state, action) => {
+        state.colorScheme = action.payload.colorScheme;
+      },
+      addCounter: (state) => {
+        state.counter = state.counter + 1; 
+      }
+    },
+  });
+
+  //Leitura
+  export default themeSlice.reducer;
+  //Estamos disponibilizando as funções para alterar o estado (Escrita).
+  export const { toggleTheme, addCounter } = themeSlice.actions;
+```
+
 - [ ] Envolva seu componente principal (`App.js` ou `index.js`) com o `Provider` do `react-redux`:
   ```js
   import React from 'react';
@@ -48,6 +97,33 @@ Note que o Redux não precisa ser utilizado apenas com o React, mas este checkli
     document.getElementById('root')
   );
   ```
+
+## Consumir dados nos componentes
+```ts
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../redux/themeSlice";
+import { AppDispatch, RootState } from "../redux/store";
+
+function Button() {
+  // const teste = useSelector((state: RootState) => state.theme);
+  // useSelector para extrair dados do Redux.
+  const theme = useSelector((state: RootState) => state.theme.colorScheme);
+  // useDispatch para enviar dados para o Redux.
+  const dispatch: AppDispatch = useDispatch();
+
+  return (
+    <button
+      onClick={() => {
+        dispatch(toggleTheme({
+          colorScheme: theme === 'dark' ? 'light' : 'dark',
+        }));
+      }}
+    >{theme}</button>
+  )
+}
+
+export default Button;
+```
 
 ## Instalar e Configurar Redux Dev Tools
 - [ ] Adicione a extensão do Redux Dev Tools ao seu navegador. [Download aqui](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)

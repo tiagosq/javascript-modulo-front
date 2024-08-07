@@ -16,7 +16,7 @@ function Button() {
           colorScheme: theme === 'dark' ? 'light' : 'dark',
         }));
       }}
-    >{teste.colorScheme}</button>
+    >{theme}</button>
   )
 }
 
