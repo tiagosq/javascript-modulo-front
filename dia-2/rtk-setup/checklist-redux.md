@@ -23,7 +23,7 @@ Note que o Redux não precisa ser utilizado apenas com o React, mas este checkli
 ## Configurar Redux Toolkit
 - [ ] Crie uma pasta chamada `store` dentro da pasta `src` do seu projeto.
 - [ ] Dentro da pasta `store`, crie um arquivo `index.js` (ou `index.ts` para TypeScript) e adicione a configuração básica do Redux Toolkit:
-  ```js
+  ```ts
   import { configureStore } from '@reduxjs/toolkit';
   import rootReducer from './rootReducer'; // Altere para o seu reducer principal
 
@@ -32,6 +32,12 @@ Note que o Redux não precisa ser utilizado apenas com o React, mas este checkli
   });
 
   export default store;
+
+  // Inferência: tu tá usando o retorno para saber os valores disponíveis.
+  // E é por isso que tu precisa colocar todos os valores iniciais no Slice.
+  export type RootState = ReturnType<typeof store.getState>;
+  // É frescura do Redux
+  export type AppDispatch = typeof store.dispatch;
   ```
 
 - [ ] Crie seu `reducer`, sendo que o nome do arquivo é ideal que seja feito `nomeSlice.ts`. Você pode criar vários `reducers` desde que coloque os mesmos dentro da `store` criada anteriormente.
