@@ -1,41 +1,30 @@
-# Formulário de Contato
-*Atividade criada por Tiago Quadros*
+# React + TypeScript + Vite
 
-## Objetivo
-Nesta aplicação, iremos criar um formulário de várias etapas.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-![Exemplo](exemplo.png)
+Currently, two official plugins are available:
 
-## Habilidades Esperadas
-- Compreender o uso de estados
-- Compreender o ciclo de vida de componentes
-- Dominar renderizações condicionais
-- Dominar o uso de Redux Toolkit
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Como entregar a atividade?
-As atividade devem ser enviadas em um arquivo zip, apenas com os seus códigos (as dependências podem ser reinstaladas apenas com o `package.json`).
+## Expanding the ESLint configuration
 
-[FORMULÁRIO PARA ENVIO](https://forms.gle/iJKx4yrXPouE5KpU8)
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Requisitos
+- Configure the top-level `parserOptions` property like this:
 
-### 1 - Criar a estrutura inicial.
-Crie um novo projeto React utilizando o Vite. Não esqueça de instalar as dependências do Redux neste projeto.
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-### 2 - Configure o Redux Toolkit
-Crie uma nova store e slice para gerenciar o estado do formulário de contato.
-
-### 3 - Crie os componentes que representam as etapas do formulário
-Crie componentes separados para cada etapa do formulário (ex: Step1, Step2, Step3).
-- Na primeira etapa, precisamos ter apenas um campo para o nome.
-- Na segunda etapa, precisamos ter apenas um campo para o e-mail.
-- Na terceira etapa, precisamos ter apenas um campo para a idade.
-
-### 4 - Valide as etapas
-Garanta com que cada etapa só pode ser concluída, caso todos os campos sejam preenchidos. É interessante ter uma mensagem para avisar o usuário.
-
-### 5 - Armazene os valores no Redux
-Utilizando de dispatches, garanta que os valores sejam salvos no Redux durante cada etapa.
-
-### 6 - Exibir o resultado final
-Todos os valores devem aparecer ao final da terceira etapa.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
