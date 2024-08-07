@@ -1,37 +1,27 @@
-# API de Cachorros
-*Atividade criada por Tiago Quadros*
+# ContadorAngular
 
-## Objetivo
-Aqui iremos criar um contador que poderá servir como uma ferramenta de pomodoro ou similar.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
-![Exemplo](exemplo.png)
+## Development server
 
-## Habilidades Esperadas
-- Criar uma aplicação com Angular
-- Assimilar os conceitos do Angular
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Como entregar a atividade?
-As atividade devem ser enviadas em um arquivo zip, apenas com os seus códigos (as dependências podem ser reinstaladas apenas com o `package.json`).
+## Code scaffolding
 
-[FORMULÁRIO PARA ENVIO](https://forms.gle/iJKx4yrXPouE5KpU8)
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Requisitos
+## Build
 
-### 1 - Criar a estrutura inicial.
-Crie um novo projeto Vue.js.
-Configure o projeto conforme necessário, incluindo a instalação de quaisquer dependências adicionais.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### 2 - Criar os Componentes Básicos
-Crie um componente para o contador, dois botões para ajustar o contador e um botão para resetar o contador.
+## Running unit tests
 
-### 3 - Gerenciar Estados e Eventos
-Garanta que o valor do contador esteja vinculado a um estado do componente e o clique nos botões de incremento e decremento atualize corretamente o valor do contador.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-### 4 - [BÔNUS] Defina limites de máximo e mínimo
-Garanta que os valores de incremento, inicial, máximo e mínimo sejam considerados nas operações de incremento e decremento.
+## Running end-to-end tests
 
-### 5 - [BÔNUS] Exibir Mensagens de Aviso
-Crie um componente para exibir mensagens de aviso quando o valor do contador atingir os limites máximo ou mínimo.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-### 6 - [BÔNUS] Estilização Condicional
-Faça a estilização condicional do contador para alterar a cor conforme o valor atual. Use cores como verde para valores positivos, vermelho para negativos, e azul para o valor zero.
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
