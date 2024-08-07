@@ -1,0 +1,1 @@
+export const converteAltura = (altura: number) => altura / 100;
